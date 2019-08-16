@@ -52,4 +52,6 @@ A caffe implementation of am-softmax loss face recognition
 	cd prototxt
 	./am-train.sh 0
 	```
+    Note that in `am-softmax-train.prototxt`, layer`fc6_l2_ft` num_output 
+    should equal to the number of image directories. We set to 11833 here because we have 11833 different people's photos.  
     After training, a model `am-softmax-face_iter_36000.caffemodel` and a corresponding log file are placed in the directory of `result/`.

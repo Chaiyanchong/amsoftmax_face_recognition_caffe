@@ -16,7 +16,7 @@ layer {
   }
   image_data_param {
     source: "../../preprocess/result/CASIA_WebFace-96x112.txt"
-    batch_size: 4
+    batch_size: 256
     shuffle: true
   }
 }
