@@ -2,7 +2,7 @@
 A caffe implementation of am-softmax loss face recognition
 
 ### Installation
-1. Clone the our repository. The directory 'amsoftmax_face_recognition_caffe' that you cloned will be called as **`ROOT_DIR`**.
+1. Clone our repository. The directory 'amsoftmax_face_recognition_caffe' that you cloned will be called as **`ROOT_DIR`**.
 
     ```Shell
     git clone --recursive git@github.com:zjchenchujie/amsoftmax_face_recognition_caffe.git
