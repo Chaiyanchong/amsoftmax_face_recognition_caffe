@@ -1,1 +1,4 @@
 .idea/
+preprocess/result/
+preprocess/data/
+train/result/
