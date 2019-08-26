@@ -694,6 +694,11 @@ def main(show_img=False, face_alignment=False):
         print('deal with ' + str(population+1) + '-th directory, total: ' + str(total_dir))
         for file in os.listdir(dataset_dir + img_id):
             img = cv2.imread(dataset_dir + img_id + '/' + file)
+            try:
+                img.shape
+            except:
+                print("read image failed: " + dataset_dir + img_id + '/' + file)
+                continue
             # print('deal with ' + str(population) + '-th directory, total: ' + str(total_dir))
 
             img_matlab = img.copy()
@@ -731,6 +736,15 @@ def main(show_img=False, face_alignment=False):
                     top = math.ceil(face_boxes[face_index][1])
                     right = math.ceil(face_boxes[face_index][2])
                     bottom = math.ceil(face_boxes[face_index][3])
+
+                    if left < 0:
+                        left = 0
+                    if top < 0:
+                        top = 0
+                    if right >= img.shape[1]:
+                        right = img.shape[1] - 1
+                    if bottom >= img.shape[0]:
+                        bottom = img.shape[0] - 1
 
                     crop_img = img[top:bottom, left:right]
                     face_resized = cv2.resize(crop_img, (img_resize[0], img_resize[1]))
